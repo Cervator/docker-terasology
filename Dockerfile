@@ -16,6 +16,6 @@ RUN mkdir /terasology \
     && wget -P /terasology ${SERVER_ZIP} \
     && unzip /terasology/TerasologyOmega.zip -d /terasology \
     && rm -f /terasology/TerasologyOmega.zip
-ENTRYPOINT cd /terasology && ls -la && java -Xms256m -Xmx${MEMORY_LIMIT} -jar /terasology/libs/Terasology.jar -headless -homedir=/terasology/server -overrideDefaultConfig=${OVERRIDE_CFG_PATH}
-VOLUME /terasology
+ENTRYPOINT cd /terasology && java -Xms256m -Xmx${MEMORY_LIMIT} -jar /terasology/libs/Terasology.jar -headless -homedir=/terasology/server -overrideDefaultConfig=${OVERRIDE_CFG_PATH}
+VOLUME /terasology/server
 EXPOSE ${SERVER_PORT}
