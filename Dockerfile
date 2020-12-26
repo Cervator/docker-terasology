@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y openjdk-11-jre wget unzip
 RUN mkdir /terasology \
     && wget -P /terasology ${SERVER_ZIP} \
     && unzip /terasology/TerasologyOmega.zip -d /terasology \
-    && rm -f /terasology/TerasologyOmega.zip \
-    && chmod 777 -R /terasology
+    && rm -f /terasology/TerasologyOmega.zip
 ENTRYPOINT cd /terasology && ls -la && java -Xms256m -Xmx${MEMORY_LIMIT} -jar /terasology/libs/Terasology.jar -headless -homedir=/terasology/server -overrideDefaultConfig=${OVERRIDE_CFG_PATH}
-VOLUME /terasology/server
+VOLUME /terasology
 EXPOSE ${SERVER_PORT}
