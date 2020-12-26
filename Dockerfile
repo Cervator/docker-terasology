@@ -9,7 +9,7 @@ ENV SERVER_ZIP="http://jenkins.terasology.org/job/DistroOmegaRelease/lastSuccess
     MEMORY_LIMIT="4096m" \
     OVERRIDE_CFG_PATH="override.cfg" \
     SERVER_PASSWORD="NotUsedYet2" \
-    ADMIN_PASSWORD="NotUsedYet2"
+    ADMIN_PASSWORD="NotUsedYet3"
 
 RUN apt-get update && apt-get install -y openjdk-11-jre wget unzip
 RUN mkdir /terasology \
